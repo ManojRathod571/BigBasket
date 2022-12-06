@@ -305,7 +305,7 @@ const Home = () => {
           <SponcerSectionForMobile />
         </Box>
 
-        {/* My basket section */}
+        {/* My Smart basket section */}
         <Box mt="2rem" display={{ base: "none", md: "block" }}>
           <Heading heading="My Smart Basket " />
           <MySmartBasketCarousel data={carousel} />

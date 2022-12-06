@@ -106,7 +106,7 @@ const Product_right_grid = () => {
                 }
               })
               .map((item, id) => {
-                return <Product_card id={id} item={item} />;
+                return <Product_card id={id} item={item} key={id} />;
               })}
           </Grid>
         </Box>

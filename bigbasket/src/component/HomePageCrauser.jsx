@@ -19,6 +19,22 @@ const HomePageCrauser = () => {
       <Slider {...settings}>
         <Box>
           <Image
+            src="https://www.bigbasket.com/media/uploads/banner_images/YXTT6073_DT_1600x460_23rdnov22.jpg"
+            alt="banner1"
+            w="100%"
+            h="auto"
+          />
+        </Box>
+        <Box>
+          <Image
+            src=" https://www.bigbasket.com/media/uploads/banner_images/1904223_gourmet-snacks_460_1st.jpg"
+            alt="banner1"
+            w="100%"
+            h="auto"
+          />
+        </Box>
+        <Box>
+          <Image
             src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_pl_tasties-origins_1600x460-141122.jpg"
             alt="banner1"
             w="100%"
@@ -105,7 +121,6 @@ const HomePageCrauser = () => {
             h="auto"
           />
         </Box>
-        {/* */}
       </Slider>
     </Box>
   );

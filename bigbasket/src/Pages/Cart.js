@@ -13,10 +13,10 @@ import {
 
 import { RiCouponFill } from "react-icons/ri";
 import CartTbale from "../component/CartTbale";
+import CartTotal from "./CartTotal";
 
 const Cart = () => {
-  const cart = useSelector((store) => store.CartReducer.cartProducts);
-  console.log(cart);
+  const cartData = useSelector((store) => store.CartReducer.cartProduct);
   return (
     <Box bg="#f3f3f3">
       <Box py="1rem">
@@ -29,7 +29,7 @@ const Cart = () => {
               color="#58595b"
               mb=".2rem"
             >
-              Your Basket Has (10 items)
+              Your Basket Has ({`${cartData.length}`} items)
             </Text>
             <Box borderBottom="1px solid #E8E8E8" />
           </Box>
@@ -49,6 +49,7 @@ const Cart = () => {
             </Button>
           </HStack>
           <CartTbale />
+          {cartData.length > 0 ? <CartTotal /> : null}
         </Box>
       </Box>
     </Box>

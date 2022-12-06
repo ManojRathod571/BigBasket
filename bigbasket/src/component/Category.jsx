@@ -135,7 +135,7 @@ const Category = () => {
           >
             {data.map(({ title, id, url, src, link }) => {
               return (
-                <Link to={link}>
+                <Link to={link} key={id}>
                   <MenuItem
                     minH="48px"
                     key={id}

@@ -4,10 +4,11 @@ import { IoIosArrowDown } from "react-icons/io";
 import LoginSignUpOption from "../component/LoginSignUpOption";
 import SearchBar from "../component/SearchBar";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
-
+  const cartData = useSelector((store) => store.CartReducer.cartProduct);
   const changeNavbarBg = () => {
     // console.log(window.scrollY);
     if (window.scrollY >= 30) {
@@ -86,7 +87,7 @@ const Navbar = () => {
                     My Basket
                   </Text>
                   <Text color="red" fontSize="14px" fontFamily="Poppins">
-                    0 Items
+                    {`${cartData.length > 0 ? cartData.length : 0}`} Items
                   </Text>
                 </Box>
               </Flex>

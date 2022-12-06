@@ -3,10 +3,15 @@ import { RiTruckFill } from "react-icons/ri";
 import { IoMdCart } from "react-icons/io";
 import { useState } from "react";
 import "../index.css";
+import { add_products } from "../Redux/CartReducer/action";
+import { useDispatch } from "react-redux";
 
 const Products = ({ item, id }) => {
-  const [active, setActive] = useState(0);
   const toast = useToast();
+  const dispatch = useDispatch();
+  const AddProductToCart = () => {
+    dispatch(add_products(item));
+  };
   return (
     <Box>
       <Flex
@@ -57,12 +62,13 @@ const Products = ({ item, id }) => {
           bg="#a5cd39"
           color="white"
           onClick={() => {
+            AddProductToCart(item.id);
             toast({
               title: "Added to cart SuccessFully",
               description: `${item.product_info}`,
               position: "top-center",
               status: "success",
-              duration: 9000,
+              duration: 1000,
               isClosable: true,
             });
           }}

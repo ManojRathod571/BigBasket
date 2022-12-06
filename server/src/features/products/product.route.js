@@ -33,9 +33,7 @@ app.get("", async (req, res) => {
         .skip((page - 1) * limit)
         .limit(limit);
       res.send(products);
-    }
-
-    else if (input) {
+    } else if (input) {
       let temp = new RegExp(input, "i");
       let validate = await Product.find({ product_info: temp });
       res.send(validate);

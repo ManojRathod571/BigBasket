@@ -12,6 +12,7 @@ import Fruits from "./Fruits";
 import Gourmet from "./Gourmet";
 import Home from "./Home";
 import Kitchen from "./Kitchen";
+import SingleProduct from "./SingleProduct";
 import Snacks from "./Snacks";
 
 const AllRoutes = () => {
@@ -34,6 +35,7 @@ const AllRoutes = () => {
         <Route path="/gourmet&worldfood" element={<Gourmet />}></Route>
         <Route path="/babycare" element={<Babycare />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/singleproduct" element={<SingleProduct />}></Route>
       </Routes>
     </div>
   );

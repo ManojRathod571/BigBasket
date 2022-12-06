@@ -37,16 +37,16 @@ const Footer = () => {
         <Box>
           <FooterHeading heading="heading" />
           <Box>
-            {bigbasket.map((item) => {
-              return <FooterTitle title={item} />;
+            {bigbasket.map((item, index) => {
+              return <FooterTitle title={item} key={index} />;
             })}
           </Box>
         </Box>
         <Box>
           <FooterHeading heading="Help" />
           <Box>
-            {help.map((item) => {
-              return <FooterTitle title={item} />;
+            {help.map((item, index) => {
+              return <FooterTitle key={index} title={item} />;
             })}
           </Box>
         </Box>
@@ -119,7 +119,7 @@ const Footer = () => {
           </Flex>
         </Box>
       </Flex>
-      <Box borderBottom="1px solid 	#E8E8E8" w="100%" mb="1rem"/>
+      <Box borderBottom="1px solid 	#E8E8E8" w="100%" mb="1rem" />
     </Box>
   );
 };

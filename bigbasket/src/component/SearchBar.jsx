@@ -9,16 +9,18 @@ import {
 import { Search2Icon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductForSearch } from "../Redux/SearchReducer/action";
+// import { add_products } from "../Redux/CartReducer/action";
 import Products from "./Products";
 
 const SearchBar = () => {
   const data = useSelector((store) => store.SearchReducer?.productList);
-  // console.log({ data });
   const dispatch = useDispatch();
+  // console.log({ data });
   const [inputText, setInputText] = useState("");
   const handleChange = (e) => {
     setInputText(e.target.value);
   };
+
 
   useEffect(() => {
     if (inputText === "") {
