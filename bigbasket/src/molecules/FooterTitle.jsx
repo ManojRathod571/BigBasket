@@ -5,7 +5,7 @@ const FooterTitle = ({ title }) => {
   return (
     <Box key={title.id}>
       <Text
-        fontSize="13px"
+        fontSize={{ base: "11px", md: "13px" }}
         fontFamily="Poppins"
         fontWeight="300"
         color="#808080"

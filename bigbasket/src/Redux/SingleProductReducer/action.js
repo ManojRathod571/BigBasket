@@ -35,4 +35,4 @@ const addItemError = () => {
 //     });
 // };
 
-export { addItem };
+export { addItem, addItemLoading, addItemError };

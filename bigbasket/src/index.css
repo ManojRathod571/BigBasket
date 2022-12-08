@@ -18,3 +18,11 @@ code {
 .category_Btn:hover ~ .category {
   display: block;
 }
+/* 
+.basketProducts {
+  display: none;
+}
+.basket:hover + .basketProducts {
+  display: block;
+  color: red;
+} */

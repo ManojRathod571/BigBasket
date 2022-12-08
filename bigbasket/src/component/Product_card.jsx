@@ -17,10 +17,9 @@ import { IoMdCart } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { add_products } from "../Redux/CartReducer/action";
 import { Link } from "react-router-dom";
-import { addItem } from "../Redux/SingleProductReducer/action";
+import { addItem, addItemLoading } from "../Redux/SingleProductReducer/action";
 
 const Product_card = ({ item, id }) => {
-  // console.log(item._id);
   const toast = useToast();
   const dispatch = useDispatch();
 
@@ -29,6 +28,7 @@ const Product_card = ({ item, id }) => {
   };
 
   const getSingleItem = (item) => {
+    dispatch(addItemLoading());
     dispatch(addItem(item));
   };
 

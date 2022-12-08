@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Image } from "@chakra-ui/react";
+import { Box, Text, Flex, Image, Grid } from "@chakra-ui/react";
 import React from "react";
 import FooterHeading from "../molecules/FooterHeading";
 import FooterTitle from "../molecules/FooterTitle";
@@ -31,9 +31,20 @@ const help = [
 
 const Footer = () => {
   return (
-    <Box w="75.5%" m="auto" mt="1rem">
-      <Box borderTop="1px solid #E8E8E8" w="100%" mt="2rem" mb=".5rem" />
-      <Flex justify="space-between" my="2rem" px="1rem">
+    <Box w={{ base: "100%", md: "80%", lg: "75.5%" }} m="auto" mt="1rem">
+      <Box borderTop="1px solid #E8E8E8" w="100%" mt="2rem" mb=".5rem"></Box>
+      <Grid
+        gridTemplateColumns={{
+          base: "1fr 1fr",
+          md: "1fr 1fr",
+          lg: "1fr 1fr 1fr 1fr ",
+        }}
+        // justify=""
+        my="2rem"
+        px="1rem"
+        // Grid Wrap={{ base: "wrap", lg: "wrap" }}
+        // w="100%"
+      >
         <Box>
           <FooterHeading heading="heading" />
           <Box>
@@ -42,6 +53,7 @@ const Footer = () => {
             })}
           </Box>
         </Box>
+
         <Box>
           <FooterHeading heading="Help" />
           <Box>
@@ -50,13 +62,14 @@ const Footer = () => {
             })}
           </Box>
         </Box>
+
         <Box>
           <FooterHeading heading="Download Our App" />
           <Box mb=".5rem">
             <Image
               src="https://www.bbassets.com/static/v2610/custPage/build/content/img/Google-App-store-icon.png"
               alt=""
-              w="150px"
+              w={{ base: "100px", md: "150px" }}
               h="auto"
             />
           </Box>
@@ -64,7 +77,7 @@ const Footer = () => {
             <Image
               src="https://www.bbassets.com/static/v2610/custPage/build/content/img/Apple-App-store-icon.png"
               alt=""
-              w="150px"
+              w={{ base: "100px", md: "150px" }}
               h="auto"
             />
           </Box>
@@ -75,8 +88,8 @@ const Footer = () => {
             <Flex
               bg="#3b5998"
               _hover={{ bg: "", border: "1px solid " }}
-              w="40px"
-              h="40px"
+              w={{ base: "30px", md: "40px" }}
+              h={{ base: "30px", md: "40px" }}
               borderRadius="50%"
               align="center"
               justify="center"
@@ -86,8 +99,8 @@ const Footer = () => {
             <Flex
               bg="#db3236"
               _hover={{ bg: "", border: "1px solid " }}
-              w="40px"
-              h="40px"
+              w={{ base: "30px", md: "40px" }}
+              h={{ base: "30px", md: "40px" }}
               borderRadius="50%"
               align="center"
               justify="center"
@@ -97,8 +110,8 @@ const Footer = () => {
             <Flex
               bg="#00aced"
               _hover={{ bg: "", border: "1px solid " }}
-              w="40px"
-              h="40px"
+              w={{ base: "30px", md: "40px" }}
+              h={{ base: "30px", md: "40px" }}
               borderRadius="50%"
               align="center"
               justify="center"
@@ -108,8 +121,8 @@ const Footer = () => {
             <Flex
               bg="#517fa4"
               _hover={{ bg: "", border: "1px solid " }}
-              w="40px"
-              h="40px"
+              w={{ base: "30px", md: "40px" }}
+              h={{ base: "30px", md: "40px" }}
               borderRadius="50%"
               align="center"
               justify="center"
@@ -118,7 +131,7 @@ const Footer = () => {
             </Flex>
           </Flex>
         </Box>
-      </Flex>
+      </Grid>
       <Box borderBottom="1px solid 	#E8E8E8" w="100%" mb="1rem" />
     </Box>
   );

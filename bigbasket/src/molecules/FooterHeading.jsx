@@ -5,7 +5,7 @@ const FooterHeading = ({ heading }) => {
   return (
     <Box mb="1rem">
       <Text
-        fontSize="16px"
+        fontSize={{ base: "13px", md: "16px" }}
         fontFamily="Poppins"
         fontWeight="300"
         color="#6cd138"

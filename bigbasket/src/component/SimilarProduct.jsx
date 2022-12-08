@@ -1,11 +1,12 @@
 import React from "react";
-import { Text, Box } from "@chakra-ui/react";
+import { Text, Box, Grid } from "@chakra-ui/react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Product_card from "./Product_card";
 
-const SimilarProduct = () => {
+
+const SimilarProduct = ({ products }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -55,13 +56,26 @@ const SimilarProduct = () => {
           Similar Products
         </Text>
       </Box>
-      <Box borderBottom="1px solid #C8C8C8" />
+      <Box borderBottom="1px solid #C8C8C8" mb="1rem" />
       <Box w={{ base: "70%", md: "100%" }} overflow={"hidden"} m="auto">
-        <Slider {...settings}>
-          {/* {data?.map((item, id) => {
+        {/* <Slider {...settings}>
+          {products?.map((item, id) => {
             return <Product_card key={id} item={item} id={id} />;
-          })} */}
-        </Slider>
+          
+        </Slider> */}
+
+        <Grid
+          gridTemplateColumns={{
+            base: "1fr",
+            md: "repeat(3, 1fr)",
+            lg: "repeat(5, 1fr)",
+          }}
+          rowGap="2rem"
+        >
+          {products.map((item, index) => {
+            return <Product_card item={item} />;
+          })}
+        </Grid>
       </Box>
     </Box>
   );

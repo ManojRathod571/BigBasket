@@ -1,10 +1,24 @@
 import { useState } from "react";
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Image,
+  Text,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from "@chakra-ui/react";
 import { IoIosArrowDown } from "react-icons/io";
 import LoginSignUpOption from "../component/LoginSignUpOption";
 import SearchBar from "../component/SearchBar";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "../index.css";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -82,14 +96,25 @@ const Navbar = () => {
                     h="35px"
                   />
                 </Box>
-                <Box>
-                  <Text color="red" fontSize="14px" fontFamily="Poppins">
-                    My Basket
-                  </Text>
-                  <Text color="red" fontSize="14px" fontFamily="Poppins">
-                    {`${cartData.length > 0 ? cartData.length : 0}`} Items
-                  </Text>
-                </Box>
+                <Menu>
+                  <MenuButton className="basket">
+                    <Box>
+                      <Text color="red" fontSize="14px" fontFamily="Poppins">
+                        My Basket
+                      </Text>
+                      <Text color="red" fontSize="14px" fontFamily="Poppins">
+                        {`${cartData.length > 0 ? cartData.length : 0}`} Items
+                      </Text>
+                    </Box>
+                  </MenuButton>
+                  <MenuList className="basketProducts">
+                    <MenuItem>Download</MenuItem>
+                    <MenuItem>Create a Copy</MenuItem>
+                    <MenuItem>Mark as Draft</MenuItem>
+                    <MenuItem>Delete</MenuItem>
+                    <MenuItem>Attend a Workshop</MenuItem>
+                  </MenuList>
+                </Menu>
               </Flex>
             </Link>
           </Flex>
