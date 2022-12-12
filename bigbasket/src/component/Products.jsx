@@ -22,17 +22,22 @@ const Products = ({ item, id }) => {
         justify="space-between"
         _hover={{ bg: "#f3f4f6" }}
       >
-        <Image src={item.src} alt={""} w="50px" h="50px" />
+        <Image
+          src={item.src}
+          alt={""}
+          w={{ base: "40px", md: "45px", lg: "50px" }}
+          h={{ base: "40px", md: "45px", lg: "50px" }}
+        />
 
         <Box w="100px">
           <Text
             display="block"
-            width="200px"
+            width={{ base: "100px", md: "150px", lg: "200px" }}
             overflow="hidden"
             whiteSpace="nowrap"
             textOverflow="ellipsis"
             fontWeight="400"
-            fontSize="13px"
+            fontSize={{ base: "11px", md: "", lg: "13px" }}
             fontFamily="Poppins"
             color="#666"
           >
@@ -42,20 +47,20 @@ const Products = ({ item, id }) => {
         <Box>
           <Text
             fontWeight="400"
-            fontSize="13px"
+            fontSize={{ base: "11px", md: "", lg: "13px" }}
             fontFamily="Poppins"
             color="#666"
-            ml="5rem"
+            ml={{ lg: "5rem" }}
           >
             Rs.{item.price}
           </Text>
         </Box>
-        <Box mr="5px" _hover={{ color: "#79933b" }}>
+        <Box mr={{ base: "", md: "", lg: "5px" }} _hover={{ color: "#79933b" }}>
           <RiTruckFill color="#a5cd39" fontSize="18px" />
         </Box>
         <Button
           rightIcon={<IoMdCart fontSize="15px" />}
-          fontSize="14px"
+          fontSize={{ base: "11px", md: "13px", lg: "14px" }}
           colorScheme="teal"
           variant="solid"
           size="xs"

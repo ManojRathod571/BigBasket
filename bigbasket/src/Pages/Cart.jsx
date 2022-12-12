@@ -20,10 +20,16 @@ const Cart = () => {
   return (
     <Box bg="#f3f3f3">
       <Box py="1rem">
-        <Box w="75.5%" m="auto" bg="white" px="1.5rem" py="2rem">
+        <Box
+          w={{ base: "95%", lg: "75.5%" }}
+          m="auto"
+          bg="white"
+          px={{ base: ".8rem", lg: "1.5rem" }}
+          py="2rem"
+        >
           <Box>
             <Text
-              fontSize="23px"
+              fontSize={{ base: "18px", lg: "23px" }}
               fontFamily="Poppins"
               fontWeight="300"
               color="#58595b"
@@ -49,7 +55,7 @@ const Cart = () => {
             </Button>
           </HStack>
           <CartTbale />
-          {cartData.length > 0 ? <CartTotal /> : null}
+          {/* {cartData.length > 0 ? <CartTotal /> : null} */}
         </Box>
       </Box>
     </Box>

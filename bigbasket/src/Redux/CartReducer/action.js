@@ -14,10 +14,10 @@ const removeProduct = (payload) => {
   };
 };
 
-const reset = () => {
+const resetCart = () => {
   return {
     type: types.RESET_CART,
   };
 };
 
-export { add_products, reset, removeProduct };
+export { add_products, resetCart, removeProduct };

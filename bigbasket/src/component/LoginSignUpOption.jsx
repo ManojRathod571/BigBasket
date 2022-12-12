@@ -90,12 +90,16 @@ const LoginSignUpOption = () => {
               <ModalBody pb={6}>
                 <FormControl>
                   <FormLabel>Email</FormLabel>
-                  <Input ref={initialRef} placeholder="Enter your email" required />
+                  <Input
+                    ref={initialRef}
+                    placeholder="Enter your email"
+                    required
+                  />
                 </FormControl>
 
                 <FormControl mt={4}>
                   <FormLabel>Password</FormLabel>
-                  <Input placeholder="Enter your password" required/>
+                  <Input placeholder="Enter your password" required />
                 </FormControl>
               </ModalBody>
 

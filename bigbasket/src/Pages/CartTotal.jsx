@@ -2,8 +2,15 @@ import { Box, HStack, Text, Button, Flex } from "@chakra-ui/react";
 import React from "react";
 import { RiDeleteBin3Line } from "react-icons/ri";
 import { GiShoppingCart } from "react-icons/gi";
+import { useDispatch } from "react-redux";
+import { resetCart } from "../Redux/CartReducer/action";
 
-const CartTotal = () => {
+const CartTotal = ({ total }) => {
+  const dispatch = useDispatch();
+
+  const EmptyBasket = () => {
+    dispatch(resetCart());
+  };
   return (
     <Box my="3rem">
       <HStack justify={"space-between"} align={"start"}>
@@ -18,6 +25,7 @@ const CartTotal = () => {
               fontSize="12px"
               fontFamily="Poppins"
               fontWeight="500"
+              onClick={() => EmptyBasket()}
             >
               EMPTY BASKET
             </Button>
@@ -61,7 +69,7 @@ const CartTotal = () => {
                   fontWeight="400"
                   color="#58595b"
                 >
-                  Rs: 0
+                  Rs: {total}
                 </Text>
               </Box>
             </Flex>
@@ -106,7 +114,7 @@ const CartTotal = () => {
                   fontWeight="500"
                   color="#58595b"
                 >
-                  RS: 6000
+                  RS:{total}
                 </Text>
               </Box>
             </Flex>

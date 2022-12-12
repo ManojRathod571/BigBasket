@@ -279,9 +279,9 @@ const Home = () => {
     <>
       {/* category */}
 
-      <Box w={{ base: "92%", md: "75.5%" }} m="auto">
+      {/* <Box w={{ base: "92%", md: "75.5%" }} m="auto">
         <Category />
-      </Box>
+      </Box> */}
 
       {/* Banner section */}
       <Box mb="3rem">
