@@ -4,16 +4,18 @@ import ProductPage from "./ProductPage";
 import { useDispatch } from "react-redux";
 import { getProducts } from "../Redux/ProductReducer/action";
 import { useEffect } from "react";
+import Navbar from "../organisam/Navbar";
+import Footer from "../organisam/Footer";
 
 const Snacks = () => {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(getProducts("sneakes"));
-  // }, []);
   return (
-    <Box>
-      <ProductPage />
-    </Box>
+    <>
+      {/* <Navbar /> */}
+      <Box>
+        <ProductPage />
+      </Box>
+      {/* <Footer /> */}
+    </>
   );
 };
 

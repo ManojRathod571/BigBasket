@@ -18,12 +18,15 @@ import ReactImageMagnify from "react-image-magnify";
 import Subcategory from "../component/Subcategory";
 import { useDispatch } from "react-redux";
 import { add_products } from "../Redux/CartReducer/action";
+import Navbar from "../organisam/Navbar";
+import Footer from "../organisam/Footer";
 
 const ImageSingle = ({ image }) => {
   console.log("Image", { image });
 
   return (
     <>
+      <Navbar />
       <div style={{ width: "100", height: "350px" }}>
         <ReactImageMagnify
           {...{
@@ -352,6 +355,7 @@ const SingleProduct = () => {
           <SimilarProduct products={fewProducts} />
         </Box>
       )}
+      <Footer />
     </>
   );
 };

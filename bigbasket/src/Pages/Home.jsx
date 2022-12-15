@@ -13,6 +13,8 @@ import SponcerSectionForMobile from "../component/SponcerSectionForMobile";
 import Category from "../component/Category";
 import { getProducts } from "../Redux/ProductReducer/action";
 import { Link } from "react-router-dom";
+import Navbar from "../organisam/Navbar";
+import Footer from "../organisam/Footer";
 
 const topOffers = [
   {
@@ -277,6 +279,7 @@ const Home = () => {
   }
   return (
     <>
+      <Navbar />
       {/* category */}
 
       {/* <Box w={{ base: "92%", md: "75.5%" }} m="auto">
@@ -538,6 +541,7 @@ const Home = () => {
           />
         </Box>
       </Box>
+      <Footer />
     </>
   );
 };
