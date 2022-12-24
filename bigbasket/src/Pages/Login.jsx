@@ -9,48 +9,56 @@ import {
   FormLabel,
   Grid,
 } from "@chakra-ui/react";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
+import lottie from "lottie-web";
+import { useDispatch, useSelector } from "react-redux";
+import { Login } from "../Redux/AuthReducer/action";
+import BigBasketLoginHeading from "../molecules/BigBasketLoginHeading";
+import GoToHome from "../molecules/GoToHome";
 
 const initialState = {
   email: "",
   password: "",
 };
 
-const Login = () => {
+const LoginPage = () => {
   const [input, setInput] = useState(initialState);
   const toast = useToast();
+  const { token, isAuth, isError } = useSelector((store) => store.AuthReducer);
+  const dispatch = useDispatch();
   const { email, password } = initialState;
-  const isEmail = email === "";
-  const isPassword = password === "";
+  // const isEmail = email === "";
+  // const isPassword = password === "";
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    let res = await axios.post(`http://localhost:8080/user/login`, input);
-    console.log(res.data);
-    if (res.data === "Please Signup first") {
+    dispatch(Login(input));
+    // console.log(token, isAuth);
+    if (!isAuth) {
       toast({
         title: "Login Failed",
-        description: "You are a new user, Please Signup",
+        description: "please enter correct email or password",
         status: "success",
         duration: 2000,
         isClosable: true,
         position: "top-middle",
       });
-    } else if (res.data === "invalid Password") {
+    } else if (isAuth) {
       toast({
-        title: "Invalid email or password",
-        // description: "You are a new user, Please Signup",
+        title: "Login Successfull",
         status: "success",
         duration: 2000,
         isClosable: true,
         position: "top-middle",
       });
-    } else {
-      localStorage.setItem("token", res.data);
+      localStorage.setItem("token", token);
     }
+    setInput({
+      email: "",
+      password: "",
+    });
   };
 
   const handleChange = (event) => {
@@ -59,15 +67,41 @@ const Login = () => {
     setInput({ ...input, [event.target.name]: value });
   };
   console.log(initialState);
+  const container = useRef(null);
+
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: container.current, // the dom element that will contain the animation
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: require("../lottie/cart1.json"),
+    });
+  }, []);
   return (
-    <Box bg="#f0f2f5" h="100vh">
-      <Box w="60%" m="auto" pt="10rem">
-        <Grid gridTemplateColumns="1fr 1fr">
-          <Box></Box>
+    <Box bg="#f0f2f5" h="100vh" pt="4rem">
+      <Box>
+        <BigBasketLoginHeading />
+        <Link to="/">
+          <GoToHome />
+        </Link>
+      </Box>
+      <Box w="65%" m="auto" pt="4rem">
+        <Grid
+          gridTemplateColumns="1fr 1fr"
+          align="center"
+          alignContent={"center"}
+          gap="3rem"
+        >
+          <Box h="21rem">
+            <Box ref={container} />
+          </Box>
+
           <Box
             p="2rem"
             boxShadow="0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%)"
             borderRadius="10px"
+            h="21rem"
           >
             <FormControl>
               <FormLabel>Email</FormLabel>
@@ -132,4 +166,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

@@ -26,7 +26,6 @@ const ImageSingle = ({ image }) => {
 
   return (
     <>
-      <Navbar />
       <div style={{ width: "100", height: "350px" }}>
         <ReactImageMagnify
           {...{
@@ -72,6 +71,7 @@ const SingleProduct = () => {
 
   return (
     <>
+      <Navbar />
       {loading ? (
         <Flex h="70vh" w="full" align="center" justify="center">
           <Spinner

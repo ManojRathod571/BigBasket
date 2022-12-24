@@ -5,6 +5,8 @@ import CarouselReducer from "../Redux/CarouselReducer/CarouselReducer";
 import ProductReducer from "../Redux/ProductReducer/ProductReducer";
 import CartReducer from "./CartReducer/cartReducer";
 import SingleProductReducer from "./SingleProductReducer/SingleProductReducer";
+import AuthReducer from "./AuthReducer/Authreducer";
+import signupReducer from "./SignUpReducer/signupReducer";
 
 const rootReducer = combineReducers({
   SearchReducer,
@@ -12,6 +14,8 @@ const rootReducer = combineReducers({
   ProductReducer,
   CartReducer,
   SingleProductReducer,
+  AuthReducer,
+  signupReducer,
 });
 const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
 

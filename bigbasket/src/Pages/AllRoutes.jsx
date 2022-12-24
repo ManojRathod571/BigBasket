@@ -14,8 +14,9 @@ import Fruits from "./Fruits";
 import Gourmet from "./Gourmet";
 import Home from "./Home";
 import Kitchen from "./Kitchen";
-import Login from "./Login";
-import SignUp from "./SignUp";
+import LoginPage from "./Login";
+import PrivateRoute from "./PrivateRoute";
+import SignUpPage from "./SignUp";
 import SingleProduct from "./SingleProduct";
 import Snacks from "./Snacks";
 
@@ -39,10 +40,17 @@ const AllRoutes = () => {
           <Route path="/egges&meat&fish" element={<EggesMeat />}></Route>
           <Route path="/gourmet&worldfood" element={<Gourmet />}></Route>
           <Route path="/babycare" element={<Babycare />}></Route>
-          <Route path="/cart" element={<Cart />}></Route>
+          <Route
+            path="/cart"
+            element={
+              <PrivateRoute>
+                <Cart />
+              </PrivateRoute>
+            }
+          ></Route>
           <Route path="/singleproduct" element={<SingleProduct />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="signup" element={<SignUp />}></Route>
+          <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="signup" element={<SignUpPage />}></Route>
         </Routes>
       </div>
     </>
