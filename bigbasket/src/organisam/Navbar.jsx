@@ -44,8 +44,8 @@ const Navbar = () => {
 
   const cartData = useSelector((store) => store.CartReducer.cartProduct);
   const changeNavbarBg = () => {
-    console.log(window.scrollY);
-    console.log("Nav", navbar);
+    // console.log(window.scrollY);
+    // console.log("Nav", navbar);
     if (window.scrollY >= 30) {
       setNavbar(true);
     } else {

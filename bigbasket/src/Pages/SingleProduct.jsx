@@ -22,7 +22,7 @@ import Navbar from "../organisam/Navbar";
 import Footer from "../organisam/Footer";
 
 const ImageSingle = ({ image }) => {
-  console.log("Image", { image });
+  // console.log("Image", { image });
 
   return (
     <>

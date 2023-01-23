@@ -10,13 +10,14 @@ import {
   Grid,
 } from "@chakra-ui/react";
 import { useState, useEffect, useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, Navigate, NavLink } from "react-router-dom";
 import axios from "axios";
 import lottie from "lottie-web";
 import { useDispatch, useSelector } from "react-redux";
 import { Login } from "../Redux/AuthReducer/action";
 import BigBasketLoginHeading from "../molecules/BigBasketLoginHeading";
 import GoToHome from "../molecules/GoToHome";
+// import { Navigate } from "react-router-dom";
 
 const initialState = {
   email: "",
@@ -40,7 +41,7 @@ const LoginPage = () => {
       toast({
         title: "Login Failed",
         description: "please enter correct email or password",
-        status: "success",
+        status: "error",
         duration: 2000,
         isClosable: true,
         position: "top-middle",
@@ -53,6 +54,7 @@ const LoginPage = () => {
         isClosable: true,
         position: "top-middle",
       });
+
       localStorage.setItem("token", token);
     }
     setInput({
@@ -63,17 +65,17 @@ const LoginPage = () => {
 
   const handleChange = (event) => {
     const value = event.target.value;
-    console.log(value);
+    // console.log(value);
     setInput({ ...input, [event.target.name]: value });
   };
-  console.log(initialState);
+  // console.log(isAuth);
   const container = useRef(null);
 
   useEffect(() => {
     lottie.loadAnimation({
       container: container.current, // the dom element that will contain the animation
       renderer: "svg",
-      loop: true,
+      loop: false,
       autoplay: true,
       animationData: require("../lottie/cart1.json"),
     });

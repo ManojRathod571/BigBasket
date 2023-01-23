@@ -32,7 +32,7 @@ const SignUpPage = () => {
   const dispatch = useDispatch();
   const { isSignedup } = useSelector((store) => store.signupReducer);
 
-  console.log("SignUp successfull", isSignedup);
+  // console.log("SignUp successfull", isSignedup);
 
   const navigate = useNavigate();
 
@@ -78,7 +78,7 @@ const SignUpPage = () => {
 
   const handleChange = (event) => {
     const value = event.target.value;
-    console.log(value);
+    // console.log(value);
     setInput({ ...input, [event.target.name]: value });
   };
 

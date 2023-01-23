@@ -6,7 +6,7 @@ import { Navigate, useLocation } from "react-router-dom";
 const PrivateRoute = ({ children }) => {
   const isAuth = useSelector((Store) => Store.AuthReducer.isAuth);
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
 
   if (!isAuth) {
     return <Navigate to="/login" />;
@@ -16,3 +16,5 @@ const PrivateRoute = ({ children }) => {
 };
 
 export default PrivateRoute;
+
+// console.log(

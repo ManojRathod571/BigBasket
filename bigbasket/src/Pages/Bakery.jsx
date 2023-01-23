@@ -6,7 +6,7 @@ import Footer from "../organisam/Footer";
 
 const Bakery = () => {
   const cartData = useSelector((store) => store.CartReducer.cartProducts);
-  console.log("Cart Items:- ", cartData);
+  // console.log("Cart Items:- ", cartData);
   return (
     <>
       {/* <Navbar /> */}

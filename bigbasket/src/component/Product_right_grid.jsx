@@ -90,7 +90,7 @@ const Product_right_grid = () => {
             {products
               .sort((a, b) => {
                 if (selectVal === "asc") {
-                  console.log("selected value", selectVal);
+                  // console.log("selected value", selectVal);
                   return Number(a.price) - Number(b.price);
                 }
                 if (selectVal === "desc") {
