@@ -22,7 +22,7 @@ const getProducts = (category) => (dispatch) => {
   console.log("cat", category);
   dispatch(get_product_request());
   return axios
-    .get(`http://localhost:8080/products?category=${category}`)
+    .get(`https://drab-top-coat-crab.cyclic.app/products?category=${category}`)
     .then((r) => {
       dispatch(get_product_success(r.data));
       console.log(`Category${r.data[0].category}:- `, r.data);

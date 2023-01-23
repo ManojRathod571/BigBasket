@@ -15,7 +15,6 @@ import Products from "./Products";
 const SearchBar = () => {
   const data = useSelector((store) => store.SearchReducer?.productList);
   const dispatch = useDispatch();
-  // console.log({ data });
   const [inputText, setInputText] = useState("");
   const handleChange = (e) => {
     setInputText(e.target.value);
@@ -23,7 +22,6 @@ const SearchBar = () => {
 
   useEffect(() => {
     if (inputText === "") {
-      // console.log("query is empty");
     } else {
       dispatch(getProductForSearch(inputText));
     }
@@ -31,12 +29,7 @@ const SearchBar = () => {
 
   return (
     <Box>
-      <Flex
-        // spacing={4}
-        w={{ base: "100%", md: "550px", lg: "550px" }}
-        mb={{ md: ".3rem" }}
-      >
-        {/* If you add the size prop to `InputGroup`, it'll pass it to all its children. */}
+      <Flex w={{ base: "100%", md: "550px", lg: "550px" }} mb={{ md: ".3rem" }}>
         <InputGroup size="sm" w={{ base: "100%", md: "", lg: "none" }}>
           <Input
             bg={{ base: "white", lg: "none" }}

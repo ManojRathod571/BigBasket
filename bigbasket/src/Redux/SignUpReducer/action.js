@@ -27,7 +27,7 @@ const Signup = (payload) => (dispatch) => {
 
   return axios({
     method: "post",
-    url: "http://localhost:8080/user/signup",
+    url: "https://drab-top-coat-crab.cyclic.app/user/signup",
     data: payload,
   })
     .then((r) => {

@@ -26,7 +26,7 @@ const Login = (payload) => (dispatch) => {
 
   return axios({
     method: "post",
-    url: "http://localhost:8080/user/login",
+    url: "https://drab-top-coat-crab.cyclic.app/user/login",
     data: payload,
   })
     .then((r) => {
@@ -39,4 +39,3 @@ const Login = (payload) => (dispatch) => {
 };
 
 export { Login, AuthFailed, AuthSuccess, AuthRequest };
-

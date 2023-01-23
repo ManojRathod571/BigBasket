@@ -23,7 +23,7 @@ const getDataError = () => {
 const getDataForCarousel = () => (dispatch) => {
   dispatch(getDataRequest());
   return axios
-    .get(`http://localhost:8080/products`)
+    .get(`https://drab-top-coat-crab.cyclic.app/products`)
     .then((r) => {
       dispatch(getDataSuccess(r.data));
       // console.log("responce", r.data)
